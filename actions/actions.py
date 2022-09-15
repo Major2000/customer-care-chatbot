@@ -89,7 +89,7 @@ class ActionSubmitContactForm(Action):
                 phone_number=phone_number,
                 message=message
             )
-            is_mail_sent = send_email(f"{email.split('@')[0]} contacted us!", "your@gmail.com", admin_content)
+            is_mail_sent = send_email(f"{email.split('@')[0]} contacted us!", "edgarnyandoro23@gmail.com", admin_content)
             if is_mail_sent:
                 dispatcher.utter_message(template="utter_mail_success")
             else:
