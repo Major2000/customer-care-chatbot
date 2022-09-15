@@ -2,20 +2,36 @@ version: "2.0"
 
 rules:
 
+- rule: greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_help
+
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
   - action: utter_goodbye
+
+- rule: Confirm that the bot is not a human
+  steps:
+  - intent: bot_challenge
+  - action: utter_bot_challenge
+
+- rule: thankyou
+  steps:
+  - intent: thankyou
+  - action: utter_noworries
 
 - rule: faq
   steps:
   - intent: faq
   - action: utter_faq
 
-- rule: chitchat
+- rule: help
   steps:
-  - intent: chitchat
-  - action: utter_chitchat
+  - intent: help
+  - action: utter_help
 
 - rule: out of scope
   steps:

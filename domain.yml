@@ -6,9 +6,13 @@ intents:
   - affirm
   - deny
   - faq
+  - help
   - chitchat
   - contact_us
+  - thankyou
   - outofscope
+  - bot_challenge
+  
 
 slots:
   name:
@@ -33,23 +37,19 @@ entities:
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+  - text: "Hey! I am your Assistant today!"
 
-  utter_chitchat/mood_unhappy:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+  utter_bot_challenge:
+    - text: "I am a bot, powered by CRDB!."
 
-  utter_chitchat/mood_great:
-  - text: "Great, carry on!"
-
-  utter_chitchat/bot_challenge:
-    - text: "I am a bot, powered by Droid City."
+  utter_noworries:
+    - text: You're welcome :)
 
   utter_faq/shipping_duration:
   - text: "Standard Shipping usually takes about 5-7 business days. Premium Shipping takes about 2-3 business days."
 
   utter_faq/payment_modes:
-  - text: "Payment mode we are supporting:\nCOD\nDebit/Credit cards\nEMI\nWallets."
+  - text: "Payment mode we are supporting:\n- COD\n- Debit/Credit cards\n- EMI\n- Wallets."
 
   utter_faq/track_product:
   - text: "You can track your product from accounts -> Orders. There you will find list of orders and select one of them to track."
@@ -81,10 +81,13 @@ responses:
     text: "These are the details I captured. Please confirm them below:\n Name: {name}\nEmail: {email}\nPhone No: {phone_number}\nMessage: {message}"
 
   utter_mail_success:
-  - text: "I have mailed all details to our team. You will be reverted back within 48hrs."
+  - text: "I have mailed all details to our team. You will be reverted back within 24hrs."
 
   utter_mail_canceled:
   - text: "I have canceled the mail. Anything else you want help with?"
+
+  utter_help:
+  - text: "How can I help you?. \nYou can ask me things like: \n- What's shipping duration? \n- Wallet payment mode \n- When can I return something? \n- How do I track my products?"
 
   utter_goodbye:
     - text: "Bye"
@@ -115,5 +118,5 @@ forms:
         type: from_intent
 
 session_config:
-  session_expiration_time: 60
+  session_expiration_time: 0
   carry_over_slots_to_new_session: true
