@@ -6,6 +6,7 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
+  - action: utter_help
   - intent: faq
   - action: utter_faq
 

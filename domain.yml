@@ -7,7 +7,6 @@ intents:
   - deny
   - faq
   - help
-  - chitchat
   - contact_us
   - thankyou
   - outofscope
