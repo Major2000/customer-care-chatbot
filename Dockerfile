@@ -14,8 +14,10 @@ WORKDIR /app
 # upgrade pip version
 RUN pip install --no-cache-dir --upgrade pip
 
-RUN pip install -r /app/requirements.txt \
-    && pip install -r /app/optional-requirements.txt
+RUN pip install rasa==2.8.1 \
+    && pip rasa-sdk==2.8.1 \
+    && python-engineio==4.2.0 \
+    && python-socketio==5.3.0
 
 ADD config.yml config.yml
 ADD domain.yml domain.yml
