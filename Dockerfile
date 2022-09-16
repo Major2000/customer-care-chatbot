@@ -14,10 +14,8 @@ WORKDIR /app
 # upgrade pip version
 RUN pip install --no-cache-dir --upgrade pip
 
-RUN pip install -r requirements.txt \
-    && pip install -r optional-requirements.txt
-
-RUN yarn install
+RUN pip install -r /app/requirements.txt \
+    && pip install -r /app/optional-requirements.txt
 
 ADD config.yml config.yml
 ADD domain.yml domain.yml
